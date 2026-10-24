@@ -12,6 +12,11 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AcademicsRouteImport } from './routes/academics'
+import { Route as DirectorsMessageRouteImport } from './routes/directors-message'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as PrincipalsMessageRouteImport } from './routes/principals-message'
+import { Route as TeachersStaffRouteImport } from './routes/teachers-staff'
+import { Route as TimingsRouteImport } from './routes/timings'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -28,35 +33,105 @@ const AcademicsRoute = AcademicsRouteImport.update({
   path: '/academics',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DirectorsMessageRoute = DirectorsMessageRouteImport.update({
+  id: '/directors-message',
+  path: '/directors-message',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrincipalsMessageRoute = PrincipalsMessageRouteImport.update({
+  id: '/principals-message',
+  path: '/principals-message',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeachersStaffRoute = TeachersStaffRouteImport.update({
+  id: '/teachers-staff',
+  path: '/teachers-staff',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TimingsRoute = TimingsRouteImport.update({
+  id: '/timings',
+  path: '/timings',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/academics': typeof AcademicsRoute
+  '/directors-message': typeof DirectorsMessageRoute
+  '/gallery': typeof GalleryRoute
+  '/principals-message': typeof PrincipalsMessageRoute
+  '/teachers-staff': typeof TeachersStaffRoute
+  '/timings': typeof TimingsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/academics': typeof AcademicsRoute
+  '/directors-message': typeof DirectorsMessageRoute
+  '/gallery': typeof GalleryRoute
+  '/principals-message': typeof PrincipalsMessageRoute
+  '/teachers-staff': typeof TeachersStaffRoute
+  '/timings': typeof TimingsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/academics': typeof AcademicsRoute
+  '/directors-message': typeof DirectorsMessageRoute
+  '/gallery': typeof GalleryRoute
+  '/principals-message': typeof PrincipalsMessageRoute
+  '/teachers-staff': typeof TeachersStaffRoute
+  '/timings': typeof TimingsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/academics'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/academics'
+    | '/directors-message'
+    | '/gallery'
+    | '/principals-message'
+    | '/teachers-staff'
+    | '/timings'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/academics'
-  id: '__root__' | '/' | '/about' | '/academics'
+  to:
+    | '/'
+    | '/about'
+    | '/academics'
+    | '/directors-message'
+    | '/gallery'
+    | '/principals-message'
+    | '/teachers-staff'
+    | '/timings'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/academics'
+    | '/directors-message'
+    | '/gallery'
+    | '/principals-message'
+    | '/teachers-staff'
+    | '/timings'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AcademicsRoute: typeof AcademicsRoute
+  DirectorsMessageRoute: typeof DirectorsMessageRoute
+  GalleryRoute: typeof GalleryRoute
+  PrincipalsMessageRoute: typeof PrincipalsMessageRoute
+  TeachersStaffRoute: typeof TeachersStaffRoute
+  TimingsRoute: typeof TimingsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -82,6 +157,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AcademicsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/directors-message': {
+      id: '/directors-message'
+      path: '/directors-message'
+      fullPath: '/directors-message'
+      preLoaderRoute: typeof DirectorsMessageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/principals-message': {
+      id: '/principals-message'
+      path: '/principals-message'
+      fullPath: '/principals-message'
+      preLoaderRoute: typeof PrincipalsMessageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/teachers-staff': {
+      id: '/teachers-staff'
+      path: '/teachers-staff'
+      fullPath: '/teachers-staff'
+      preLoaderRoute: typeof TeachersStaffRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/timings': {
+      id: '/timings'
+      path: '/timings'
+      fullPath: '/timings'
+      preLoaderRoute: typeof TimingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -89,6 +199,11 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AcademicsRoute: AcademicsRoute,
+  DirectorsMessageRoute: DirectorsMessageRoute,
+  GalleryRoute: GalleryRoute,
+  PrincipalsMessageRoute: PrincipalsMessageRoute,
+  TeachersStaffRoute: TeachersStaffRoute,
+  TimingsRoute: TimingsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
