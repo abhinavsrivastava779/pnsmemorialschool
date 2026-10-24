@@ -41,8 +41,8 @@ function TeachersStaff() {
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2">
           <Reveal>
             <TiltImage
-              src={staffGallery[0].src}
-              alt={staffGallery[0].alt}
+              src={heroPhoto.src}
+              alt={heroPhoto.alt}
               className="aspect-[16/10]"
             />
           </Reveal>
