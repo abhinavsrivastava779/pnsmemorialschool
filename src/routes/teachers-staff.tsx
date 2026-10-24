@@ -27,6 +27,9 @@ export const Route = createFileRoute("/teachers-staff")({
 });
 
 function TeachersStaff() {
+  const heroPhoto = staffGallery[0];
+  if (!heroPhoto) return null;
+
   return (
     <>
       <PageHeader

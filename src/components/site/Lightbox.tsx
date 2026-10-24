@@ -32,6 +32,8 @@ export function Lightbox({ images, index, onClose, onIndexChange }: LightboxProp
   }, [onClose, prev, next]);
 
   const image = images[index];
+  if (!image) return null;
+
 
   return (
     <div
