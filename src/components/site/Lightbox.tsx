@@ -72,8 +72,7 @@ export function Lightbox({ images, index, onClose, onIndexChange }: LightboxProp
           key={image.src}
           src={image.src}
           alt={image.alt}
-          className="max-h-[82vh] w-auto max-w-full rounded-xl object-contain shadow-2xl"
-          style={{ animation: "kenburns 0.001s" }}
+          className="max-h-[82vh] w-auto max-w-full rounded-xl object-contain shadow-2xl animate-in fade-in zoom-in-95 duration-200"
         />
         <figcaption className="mt-3 text-center text-sm text-primary-foreground/90">
           {image.alt}
