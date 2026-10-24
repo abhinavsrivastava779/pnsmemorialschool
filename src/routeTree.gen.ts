@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AcademicsRouteImport } from './routes/academics'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DirectorsMessageRouteImport } from './routes/directors-message'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as PrincipalsMessageRouteImport } from './routes/principals-message'
+import { Route as TeachersStaffRouteImport } from './routes/teachers-staff'
+import { Route as TimingsRouteImport } from './routes/timings'
+import { Route as ApiPublicEnquiriesRouteImport } from './routes/api/public/enquiries'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademicsRoute = AcademicsRouteImport.update({
+  id: '/academics',
+  path: '/academics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DirectorsMessageRoute = DirectorsMessageRouteImport.update({
+  id: '/directors-message',
+  path: '/directors-message',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrincipalsMessageRoute = PrincipalsMessageRouteImport.update({
+  id: '/principals-message',
+  path: '/principals-message',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeachersStaffRoute = TeachersStaffRouteImport.update({
+  id: '/teachers-staff',
+  path: '/teachers-staff',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TimingsRoute = TimingsRouteImport.update({
+  id: '/timings',
+  path: '/timings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicEnquiriesRoute = ApiPublicEnquiriesRouteImport.update({
+  id: '/api/public/enquiries',
+  path: '/api/public/enquiries',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/academics': typeof AcademicsRoute
+  '/contact': typeof ContactRoute
+  '/directors-message': typeof DirectorsMessageRoute
+  '/gallery': typeof GalleryRoute
+  '/principals-message': typeof PrincipalsMessageRoute
+  '/teachers-staff': typeof TeachersStaffRoute
+  '/timings': typeof TimingsRoute
+  '/api/public/enquiries': typeof ApiPublicEnquiriesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/academics': typeof AcademicsRoute
+  '/contact': typeof ContactRoute
+  '/directors-message': typeof DirectorsMessageRoute
+  '/gallery': typeof GalleryRoute
+  '/principals-message': typeof PrincipalsMessageRoute
+  '/teachers-staff': typeof TeachersStaffRoute
+  '/timings': typeof TimingsRoute
+  '/api/public/enquiries': typeof ApiPublicEnquiriesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/academics': typeof AcademicsRoute
+  '/contact': typeof ContactRoute
+  '/directors-message': typeof DirectorsMessageRoute
+  '/gallery': typeof GalleryRoute
+  '/principals-message': typeof PrincipalsMessageRoute
+  '/teachers-staff': typeof TeachersStaffRoute
+  '/timings': typeof TimingsRoute
+  '/api/public/enquiries': typeof ApiPublicEnquiriesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/academics'
+    | '/contact'
+    | '/directors-message'
+    | '/gallery'
+    | '/principals-message'
+    | '/teachers-staff'
+    | '/timings'
+    | '/api/public/enquiries'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/academics'
+    | '/contact'
+    | '/directors-message'
+    | '/gallery'
+    | '/principals-message'
+    | '/teachers-staff'
+    | '/timings'
+    | '/api/public/enquiries'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/academics'
+    | '/contact'
+    | '/directors-message'
+    | '/gallery'
+    | '/principals-message'
+    | '/teachers-staff'
+    | '/timings'
+    | '/api/public/enquiries'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AcademicsRoute: typeof AcademicsRoute
+  ContactRoute: typeof ContactRoute
+  DirectorsMessageRoute: typeof DirectorsMessageRoute
+  GalleryRoute: typeof GalleryRoute
+  PrincipalsMessageRoute: typeof PrincipalsMessageRoute
+  TeachersStaffRoute: typeof TeachersStaffRoute
+  TimingsRoute: typeof TimingsRoute
+  ApiPublicEnquiriesRoute: typeof ApiPublicEnquiriesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics': {
+      id: '/academics'
+      path: '/academics'
+      fullPath: '/academics'
+      preLoaderRoute: typeof AcademicsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/directors-message': {
+      id: '/directors-message'
+      path: '/directors-message'
+      fullPath: '/directors-message'
+      preLoaderRoute: typeof DirectorsMessageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/principals-message': {
+      id: '/principals-message'
+      path: '/principals-message'
+      fullPath: '/principals-message'
+      preLoaderRoute: typeof PrincipalsMessageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/teachers-staff': {
+      id: '/teachers-staff'
+      path: '/teachers-staff'
+      fullPath: '/teachers-staff'
+      preLoaderRoute: typeof TeachersStaffRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/timings': {
+      id: '/timings'
+      path: '/timings'
+      fullPath: '/timings'
+      preLoaderRoute: typeof TimingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/enquiries': {
+      id: '/api/public/enquiries'
+      path: '/api/public/enquiries'
+      fullPath: '/api/public/enquiries'
+      preLoaderRoute: typeof ApiPublicEnquiriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AcademicsRoute: AcademicsRoute,
+  ContactRoute: ContactRoute,
+  DirectorsMessageRoute: DirectorsMessageRoute,
+  GalleryRoute: GalleryRoute,
+  PrincipalsMessageRoute: PrincipalsMessageRoute,
+  TeachersStaffRoute: TeachersStaffRoute,
+  TimingsRoute: TimingsRoute,
+  ApiPublicEnquiriesRoute: ApiPublicEnquiriesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
